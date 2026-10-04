@@ -7,7 +7,14 @@ set -euo pipefail
 image="${1:?image}"
 package="${2:?package}"
 work="$(mktemp -d)"
-trap 'rm -rf "$work"' EXIT
+
+# The scaffold runs as root in the container, so on Linux the files it makes belong to root and the
+# runner's own user cannot delete them. Empty the folder from inside a container first.
+cleanup() {
+  docker run --rm -v "$work:/w" --user root --entrypoint sh "$image" -c 'rm -rf /w/* /w/.[!.]* 2>/dev/null; true' >/dev/null 2>&1 || true
+  rm -rf "$work" 2>/dev/null || true
+}
+trap cleanup EXIT
 
 case "$package" in
   php)
