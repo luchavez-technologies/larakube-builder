@@ -1,0 +1,43 @@
+{
+  "images": [
+    {
+      "package": "php",
+      "version": "8.5",
+      "base": "docker.io/serversideup/php:8.5-cli-alpine",
+      "dockerfile": "php/Dockerfile",
+      "composer": [
+        "laravel/installer",
+        "statamic/cli:^3.6"
+      ]
+    },
+    {
+      "package": "php",
+      "version": "8.4",
+      "base": "docker.io/serversideup/php:8.4-cli-alpine",
+      "dockerfile": "php/Dockerfile",
+      "composer": [
+        "laravel/installer",
+        "statamic/cli:^3.6"
+      ]
+    },
+    {
+      "package": "php",
+      "version": "8.3",
+      "base": "docker.io/serversideup/php:8.3-cli-alpine",
+      "dockerfile": "php/Dockerfile",
+      "composer": [
+        "laravel/installer",
+        "statamic/cli:^3.6"
+      ]
+    },
+    {
+      "package": "python",
+      "version": "3.12",
+      "base": "docker.io/library/python:3.12-slim",
+      "dockerfile": "python/Dockerfile",
+      "pip": [
+        "django"
+      ]
+    }
+  ]
+}
