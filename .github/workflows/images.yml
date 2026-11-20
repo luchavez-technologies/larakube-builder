@@ -24,7 +24,7 @@ env:
 
 jobs:
   matrix:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       images: ${{ steps.list.outputs.images }}
     steps:
@@ -41,7 +41,7 @@ jobs:
       matrix:
         image: ${{ fromJSON(needs.matrix.outputs.images) }}
         platform: [amd64, arm64]
-    runs-on: ${{ matrix.platform == 'arm64' && 'ubuntu-24.04-arm' || 'ubuntu-24.04' }}
+    runs-on: ${{ matrix.platform == 'arm64' && 'ubuntu-26.04-arm' || 'ubuntu-26.04' }}
     steps:
       - uses: actions/checkout@v5
 
@@ -157,7 +157,7 @@ jobs:
       fail-fast: false
       matrix:
         image: ${{ fromJSON(needs.matrix.outputs.images) }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/download-artifact@v4
         continue-on-error: true
@@ -186,7 +186,7 @@ jobs:
 
   # Does not gate anything: tells you when the LaraKube CLI pulls a builder that is not listed here.
   cli-drift:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     continue-on-error: true
     steps:
       - uses: actions/checkout@v5
