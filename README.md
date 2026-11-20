@@ -5,7 +5,7 @@ installed, so a new project does not install them on every run.
 
 | Image | Used by | Preinstalled |
 | --- | --- | --- |
-| `ghcr.io/luchavez-technologies/larakube-builder/php:<8.3\|8.4\|8.5>` | `larakube new` (Laravel), `larakube statamic:new` | Server Side Up `cli-alpine`, Node, npm, Bun, `laravel/installer`, `statamic/cli` |
+| `ghcr.io/luchavez-technologies/larakube-builder/php:<8.3\|8.4\|8.5\|8.6>` | `larakube new` (Laravel), `larakube statamic:new` | Server Side Up `cli-alpine`, Node, npm, Bun, `laravel/installer`, `statamic/cli` |
 | `ghcr.io/luchavez-technologies/larakube-builder/python:3.12` | `larakube django:new` | Python 3.12 (slim) with Django |
 
 Tags: `<version>` always points at the newest build; `<version>-r<YYYYMMDD>` is fixed. The CLI falls

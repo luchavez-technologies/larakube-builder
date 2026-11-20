@@ -2,6 +2,16 @@
   "images": [
     {
       "package": "php",
+      "version": "8.6",
+      "base": "docker.io/serversideup/php:8.6-cli-alpine",
+      "dockerfile": "php/Dockerfile",
+      "composer": [
+        "laravel/installer",
+        "statamic/cli:^3.6"
+      ]
+    },
+    {
+      "package": "php",
       "version": "8.5",
       "base": "docker.io/serversideup/php:8.5-cli-alpine",
       "dockerfile": "php/Dockerfile",
